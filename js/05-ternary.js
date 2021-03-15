@@ -12,3 +12,11 @@ else {
 }
 
 console.log(ats);
+console.log('------------');
+
+const c = 55;
+
+const d = 5;
+
+const ats2 = c > d ? c+' greater than '+d : c+' not greater than '+d;
+console.log(ats2);
