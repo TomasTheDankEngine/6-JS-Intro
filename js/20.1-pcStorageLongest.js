@@ -1,18 +1,23 @@
-function storage(folder) {
-    let totalSize = 0;
-
-    for (let i = 0; i < folder.content.length; i++) {
-        const child = folder.content[i];
-        console.log(child);
-
-        if (child.type === 'file') {
-            totalSize += child.size;
-        } else if (child.type === 'folder') {
-            totalSize += storage(child);
+function longestFile(folder) {
+    let nameLength = folder.name.length;
+    if (folder.content) {
+        for (let i = 0; i < folder.content.length; i++) {
+            const child = folder.content[i];
+            if (child.type === 'file') {
+                const childNameLength = child.name.length;
+                if (childNameLength > nameLength) {
+                    nameLength = childNameLength;
+                }
+            } else if (child.type === 'folder') {
+                const childNameLength = longestFile(child);
+                if (childNameLength > nameLength) {
+                    nameLength = childNameLength;
+                }
+            }
         }
     }
 
-    return totalSize;
+    return nameLength;
 }
 
 const pc = {
@@ -75,4 +80,4 @@ const pc = {
 
 
 
-console.log('Used space:', storage(pc), 'KB');
+console.log('Longest name length:', longestFile(pc), 'symbols');
