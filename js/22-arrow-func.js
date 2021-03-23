@@ -37,3 +37,5 @@ const sqrd = a => a * a;
 const aSqrd = sqrd(8);
 
 console.log(aSqrd);
+
+console.clear();
