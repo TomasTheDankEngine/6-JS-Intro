@@ -188,3 +188,26 @@ const dictionary2 = ['Hey', 'ya', 'heyyy', 'Yaaao'];
 const short = dictionary2.reduce((total, word) => total + word[0], '');
 
 console.log(short);
+
+/*****************************************/
+
+//SORT
+
+console.clear();
+
+const sortNum = [1, -5, 78, 2, 11, -14, 0, -3];
+
+const sortAbc = ['s', 'a', 'g', 'b', 'f'];
+
+const sortedAbc = sortAbc.sort();
+
+console.log(sortAbc);
+
+//const sortedNum = sortNum.sort((a, b) => a - b);
+const sortedNum = sortNum.sort((a, b) => a < b ? -1 : 1);
+console.log(sortedNum);
+
+/*****************************************/
+
+console.clear();
+
